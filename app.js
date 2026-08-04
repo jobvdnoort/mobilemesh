@@ -16,6 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
             stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
             cameraStream.srcObject = stream;
             startRecordingBtn.disabled = false;
+
+            if (navigator.geolocation) {
+                navigator.geolocation.requestPermission().then(response => {
+                    if (response === 'granted') {
+                        // Permission granted
+                    }
+                });
+            }
+
+            if (window.DeviceOrientationEvent && window.DeviceOrientationEvent.requestPermission) {
+                window.DeviceOrientationEvent.requestPermission().then(response => {
+                    if (response === 'granted') {
+                        // Permission granted
+                    }
+                });
+            }
         } catch (error) {
             alert('Camera access denied. Please allow camera permissions.');
         }
