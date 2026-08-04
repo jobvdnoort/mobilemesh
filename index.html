@@ -1,0 +1,21 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Scanning Data Collection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <video id="cameraStream" autoplay playsinline></video>
+        <button id="requestPermissions">Request Permissions</button>
+        <button id="startRecording" disabled>Start Recording</button>
+        <button id="stopAndUpload" disabled>Stop & Upload</button>
+        <p id="frameCounter">0 frames captured</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
